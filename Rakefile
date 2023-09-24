@@ -18,14 +18,14 @@ task default: :spec
 
 desc 'Dump type definitions from docs to YAML'
 task :dump_type_attributes do
-  require_relative 'lib/telegram/bot'
+  require_relative 'lib/telegram'
   require 'nokogiri'
   require 'open-uri'
   require 'yaml'
 
   # Preload every type we have
   Zeitwerk::Loader.eager_load_all
-  types = Telegram::Bot::Types::Base.descendants.map { |c| c.name.split('::').last }
+  types = Telegram::Types::Base.descendants.map { |c| c.name.split('::').last }
 
   # Fetch and parse docs
   doc = Nokogiri::HTML(URI.open('https://core.telegram.org/bots/api').read)

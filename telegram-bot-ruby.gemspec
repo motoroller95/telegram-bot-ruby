@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/telegram/bot/version'
+require_relative 'lib/telegram/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'telegram-bot-ruby'
-  spec.version       = Telegram::Bot::VERSION
+  spec.name          = 'telegram'
+  spec.version       = Telegram::VERSION
   spec.authors       = ['Alexander Tipugin']
   spec.email         = ['atipugin@gmail.com']
 
